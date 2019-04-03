@@ -9,4 +9,19 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+  <servlet>
+  	<!-- Servlet的名称 -->
+  	<servlet-name>DemoServlet</servlet-name>
+  	<!-- Servlet的具体实现类 -->
+  	<servlet-class>cn.htc.web.DemoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<!-- Servlet的名称 -->
+  	<servlet-name>DemoServlet</servlet-name>
+  	<!-- 访问这个servlet程序的请求路径 -->
+  	<url-pattern>/DemoServlet</url-pattern>
+  </servlet-mapping>
+  
+  
 </web-app>
