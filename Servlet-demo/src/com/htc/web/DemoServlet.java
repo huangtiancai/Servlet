@@ -1,4 +1,4 @@
-package cn.htc.web;
+package com.htc.web;
 
 import java.io.IOException;
 
@@ -15,19 +15,15 @@ import javax.servlet.http.HttpServletResponse;
  *	创建一个类 继承 HttpServlet 类
  */
 public class DemoServlet extends HttpServlet{
-	/**
-	 *重写doGet和doPost方法
-	 */
+	//重写doGet和doPost方法
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		System.out.println("doGet...");
+		System.out.println("-----");
 	}
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		System.out.println("doPost...");
-	}
-	
+	}	
 }
