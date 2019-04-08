@@ -4,22 +4,22 @@ import java.io.IOException;
 
 import javax.servlet.ServletException;
 //Interface Servlet
-//ÊµÏÖServlet½Ó¿Ú£¬±àÐ´Ò»¸öÀ©Õ¹javax.servlet.http.HttpServlet µÄ HTTP servlet
+//Êµï¿½ï¿½Servletï¿½Ó¿Ú£ï¿½ï¿½ï¿½Ð´Ò»ï¿½ï¿½ï¿½ï¿½Õ¹javax.servlet.http.HttpServlet ï¿½ï¿½ HTTP servlet
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
  * @author htc
- *	Servlet¿ª·¢µÄ²½Öè
- *	´´½¨Ò»¸öÀà ¼Ì³Ð HttpServlet Àà
+ *	Servletï¿½ï¿½ï¿½ï¿½ï¿½Ä²ï¿½ï¿½ï¿½
+ *	ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ ï¿½Ì³ï¿½ HttpServlet ï¿½ï¿½
  */
 public class DemoServlet extends HttpServlet{
-	//ÖØÐ´doGetºÍdoPost·½·¨
+	//ï¿½ï¿½Ð´doGetï¿½ï¿½doPostï¿½ï¿½ï¿½ï¿½
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		System.out.println("doGet...");
-		System.out.println("²âÊÔpullµÄ¹¦ÄÜ");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½pullï¿½Ä¹ï¿½ï¿½ï¿½");
 	}
 	
 	@Override
