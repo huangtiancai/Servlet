@@ -1,25 +1,32 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
+<%@ page import="java.util.StringTokenizer" %>
 <%@ page import="java.net.InetAddress" %>
-<%@ page import="cz.mallat.uasparser.OnlineUpdater" %>
-<%@ page import="cz.mallat.uasparser.UASparser"%>
-<%@ page import="cz.mallat.uasparser.UserAgentInfo" %>
-<%@ page import="com.htc.web.UserAgent" %>
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>UserAgent分析</title>
 </head>
+
 <body>
 当前时间: <%= (new java.util.Date()).toLocaleString()%>
 </br>
 
-<%!   static UASparser  uasparser = null;%>
 <%
 	String ua = request.getHeader("User-Agent");
     out.println("您的UserAgent : "+ua); 
+	
+
+%>
+</br>
+
+<%
+	StringTokenizer st = new StringTokenizer(ua,";");
+
 %>
 
 
@@ -54,10 +61,6 @@
 	out.println("你的IP地址为:"+request.getRemoteAddr());
 %>
 </br>
-<%	
-	out.println("-----------------------------------");
-%>
-</br>
 
 <%	
 	if(request.getHeader("x-forwarded-for") == null){ 
@@ -68,6 +71,8 @@
 	}
 	 
 %>
+
+
 
 
 </body>

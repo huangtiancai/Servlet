@@ -26,14 +26,13 @@ public class UserAgent {
 	}
 	
 	public static void main(String[] args) {
-		//获取ua
-		
+		//对已知的ua进行解析
 		String ua = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36";
 		try {
 			UserAgentInfo userAgentInfo = UserAgent.uasparser.parse(ua);
 			System.out.println("操作系统："+userAgentInfo.getOsFamily());
 			System.out.println("操作系统详细名称："+userAgentInfo.getOsName());
-			System.out.println("类型："+userAgentInfo.getType());
+			System.out.println("客户端类型："+userAgentInfo.getType());
 			System.out.println("浏览器名称和版本："+userAgentInfo.getUaName());
 			System.out.println("浏览器名称："+userAgentInfo.getUaFamily());
 			System.out.println("浏览器版本："+userAgentInfo.getBrowserVersionInfo());

@@ -27,8 +27,8 @@ public class UserAgent extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//Java解析User-Agent信息
-		//第二种方法：一种快速获取的方式，通过第三方包来实现(UserAgentUtils-1.2.4.jar)
-		//1.依赖包引入（UserAgentUtils-1.2.4.jar）-直接添加到lib下
+		//第一种方法：通过第三方包来实现(uasparser-0.6.1.jar/jregex-1.2_01.jar)
+		//1.依赖包引入（uasparser-0.6.1.jar/jregex-1.2_01.jar）-直接添加到lib下
 		
 		//2.代码实现，浏览器、系统获取
 		//获取浏览器信息
