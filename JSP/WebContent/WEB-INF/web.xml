@@ -19,4 +19,24 @@
     <servlet-name>TestServlet</servlet-name>
     <url-pattern>/testServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UserAgent</display-name>
+    <servlet-name>UserAgent</servlet-name>
+    <servlet-class>com.htc.web.UserAgent</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserAgent</servlet-name>
+    <url-pattern>/userAgent</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UserAgent1</display-name>
+    <servlet-name>UserAgent1</servlet-name>
+    <servlet-class>com.htc.web.UserAgent1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserAgent1</servlet-name>
+    <url-pattern>/userAgent1</url-pattern>
+  </servlet-mapping>
 </web-app>

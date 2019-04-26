@@ -3,6 +3,7 @@ package com.htc.test;
 //导入InetAddress的jar
 import java.net.InetAddress;
 
+
 public class Main {
 	//Java 实例 - 获取本机ip地址及主机名
 	public static void main(String[] args) throws Exception {
