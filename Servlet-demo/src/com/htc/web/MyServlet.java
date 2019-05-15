@@ -17,7 +17,7 @@ public class MyServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("MyServlet.....doGet..........");
 		System.out.println("-------1-------");
-		System.out.println("-------1-------");
+		System.out.println("-------------");
 		//需求：获取注册页面的值-使用request对象(根据name属性)
 		//String getParameter(String name)  根据name 获取对应的值
 		String username = request.getParameter("username");
