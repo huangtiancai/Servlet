@@ -43,7 +43,7 @@ public class MyServlet extends HttpServlet {
 		//使用response对象用于向浏览器发出响应
 		//response.getWriter()返回的是可将字符文本发送到客户端的 "PrintWriter"对象，这是一个打印输出流
 		//response.getWriter().print(),不仅可以打印输出文本格式的（包括html标签），还可以将一个对象以默认的编码方式转换为二进制字节输出
-		//response.getWriter().writer（）,只能打印输出文本格式的（包括html标签），不可以打印对象。 
+		//response.getWriter().writer(),只能打印输出文本格式的（包括html标签），不可以打印对象。 
 
 		//使用的方法:void write(String s) -写入字符串
 		
