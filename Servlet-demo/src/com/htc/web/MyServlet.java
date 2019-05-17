@@ -48,7 +48,7 @@ public class MyServlet extends HttpServlet {
 		//使用的方法:void write(String s) -写入字符串
 		
 		System.out.println("发送响应");
-		response.getWriter().write("test");
+		response.getWriter().write("this is responsive contents!");
 		
 	}
 
