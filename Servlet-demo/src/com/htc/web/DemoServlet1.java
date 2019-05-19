@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 public class DemoServlet1 extends HttpServlet {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		System.out.println("进入demoservlet1");
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
