@@ -1,0 +1,6 @@
+1.右键项目名 --> properties --> 输入web project settings --> 修改Context root为你现在的项目名
+2.修改后缀名为.project的文件:
+     看内容中有<name></name>里面的内容是不是自己项目名还是原来的项目名，如果是原来的项目名，则修改为现在的项目名即可
+3.如果上面的方法也不行，你可以试着修改.settings 下的org.eclipse.wst.common.component文件。settings文件夹和.project在同一个文件夹下。进入后找到这个文件，还是用编辑器打开即可。
+     发现有deploy-name或者context-root两个属性
+4.如果这些修改后，重新部署发现括号还在，有可能是部署在Tomcat中的文件有残留，你需要到部署的相应目录手动删除这个项目，然后重新部署项目
