@@ -37,4 +37,14 @@
     <servlet-name>MyServlet1</servlet-name>
     <url-pattern>/myServlet1</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DemoServlet1</display-name>
+    <servlet-name>DemoServlet1</servlet-name>
+    <servlet-class>com.htc.web.DemoServlet1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DemoServlet1</servlet-name>
+    <url-pattern>/DemoServlet1</url-pattern>
+  </servlet-mapping>
 </web-app>
