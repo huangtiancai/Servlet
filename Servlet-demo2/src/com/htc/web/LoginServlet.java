@@ -33,10 +33,9 @@ public class LoginServlet extends HttpServlet {
 		user.setPassword(password);
 		
 		//调用service方法，执行用户登陆
+		//调用service方法，执行用户登陆
 		UserService userService = new UserService();
-		
-		
-		
+	
 		
 	}
 
