@@ -23,6 +23,7 @@ public class LoginServlet extends HttpServlet {
        
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("------");
 		//获取请求参数
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");		
@@ -35,7 +36,14 @@ public class LoginServlet extends HttpServlet {
 		//调用service方法，执行用户登陆
 		//调用service方法，执行用户登陆
 		UserService userService = new UserService();
-	
+		User loginUser = userService.login(user);
+		if(loginUser==null){
+			response.getWriter().write("login error");
+		}else{
+			response.getWriter().write("login success");
+		}
+		
+		
 		
 	}
 
