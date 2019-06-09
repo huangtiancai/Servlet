@@ -36,14 +36,13 @@ public class LoginServlet extends HttpServlet {
 		//调用service方法，执行用户登陆
 		//调用service方法，执行用户登陆
 		UserService userService = new UserService();
+		//
 		User loginUser = userService.login(user);
 		if(loginUser==null){
 			response.getWriter().write("login error");
 		}else{
 			response.getWriter().write("login success");
-		}
-		
-		
+		}	
 		
 	}
 
