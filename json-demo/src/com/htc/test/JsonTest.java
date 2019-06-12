@@ -253,10 +253,8 @@ public class JsonTest {
 		Person[] persons = (Person[]) JSONArray.toArray(jsonArray, Person.class);
 		for(Person p : persons){
 			System.out.println(p);//Person [id=1, name=tom, address=beijing]
-		}
-		
-//		由于这里有实体类进行对应，所以在使用时指定了泛型的类型（Student.class），这样就可以得到转化后的对象。
-		
+		}	
+//		由于这里有实体类进行对应，所以在使用时指定了泛型的类型（Student.class），这样就可以得到转化后的对象。	
 	}
 	
 	/**
