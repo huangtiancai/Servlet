@@ -25,7 +25,7 @@ public class CategoryServlet extends HttpServlet {
 		//获取全部类型
 		List<Category> lists = cs.selectAllCategory();
 		System.out.println(lists);//list集合
-		//ist集合-->json
+		//JSONLIB:list集合-->json
 		JSONArray jsonStr = JSONArray.fromObject(lists);
 		System.out.println(jsonStr);
 		System.out.println(jsonStr.toString());
