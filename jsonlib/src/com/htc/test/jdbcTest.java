@@ -6,6 +6,8 @@ package com.htc.test;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+import org.junit.Test;
+
 import com.htc.utils.C3P0Utils;
 
 /**  
@@ -15,6 +17,7 @@ import com.htc.utils.C3P0Utils;
 * @date:2019年6月12日 下午10:11:01
 */
 public class jdbcTest {
+	@Test
 	public void testJdbc(){
 		try {
 			Connection conn = C3P0Utils.getConnection();

@@ -3,8 +3,6 @@
  */
 package com.htc.jsonlib;
 
-import com.htc.bean.User;
-
 import net.sf.json.JSONObject;
 
 /**  
