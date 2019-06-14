@@ -27,7 +27,7 @@ public class CategoryServlet extends HttpServlet {
 		List<Category> lists = cs.selectAllCategory();
 		System.out.println(lists);//list集合
 		
-		//Gson方式:ist集合-->json
+		//Gson方式:list集合-->json
 		Gson gson = new Gson();
 		String jsonStr = gson.toJson(lists);
 		System.out.println(jsonStr);
