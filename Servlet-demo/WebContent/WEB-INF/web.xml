@@ -45,6 +45,6 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>DemoServlet1</servlet-name>
-    <url-pattern>/DemoServlet1</url-pattern>
+    <url-pattern>/demoServlet1</url-pattern>
   </servlet-mapping>
 </web-app>
