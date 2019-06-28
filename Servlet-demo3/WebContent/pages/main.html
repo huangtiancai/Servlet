@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<script src="js/jquery-3.2.1.js"></script>
+	</head>
+	<body>
+		<div class="divall">
+
+       <div><img src="image/top-bg_01.gif"></div>
+
+       <div class="div2">
+            <div class="div201">发表主题</div>
+            <div class="div201" style="margin-left:20px;matgin-right:50px;">回复主贴</div>
+            <div style="width:460px; height:19px;float:left;"></div>
+            <div class="div202">精华区</div>
+            <div style="width:20px; height:19px;float:left;"></div>
+            <div class="div202">最新帖子</div>
+            <div style="width:20px; height:19px;float:left;"></div>
+            <div class="div202">会员列表</div>
+            <div style="width:20px; height:19px;float:left;"></div>
+            <div class="div202">社区应用</div>
+            <div style="width:20px; height:19px;float:left;"></div>
+            <div class="div202">统计排行</div>
+          
+       </div>
+       <div class="div2">
+            <div class="div301">我的主贴</div>
+            <div class="div301">我的回复</div>
+            <div class="div301">我的收藏</div>
+            <div class="div301">好友近况</div>
+            <div class="div301" style="width:30px;">书签</div>
+            <div class="div301"><img src="image/more.gif"></div>
+            <div style="width:550px;height:16px;float:left"></div>
+            <div class="div302">admin<img src="image/note.gif"></div>
+            <div class="div303">设置</div>
+            <div class="div303">退出</div>
+       </div>
+
+       <div class="div4"><img src="image/notice.gif" style="position:relative;top:5px;">最近没有站点工作
+       </div>
+
+       <div class="div5">
+	       <div class="div501">板块</div>
+	       <div class="div501">主贴数量</div>
+	       <div class="div501">最后发表</div>
+       </div>
+       <div class="mainBoard">
+    	<div id="mainLeft" class="mainLeft"><img src="image/board.gif"/></div>
+    	<div id="mainRight" class="mainRight"><img  class="slideimg" src="image/fold.gif"/></div>
+       </div>
+       <div class="subBoard">
+    	<table width="1010" cellpadding="0" cellspacing="0">
+    		<tr height="20">
+    			<td width="490" cellspadding="10"><img src="image/ChildBoard.gif"/></td>
+    			<td width="200" style="color:black"></td>
+    			<td></td>
+    		</tr>
+    	</table>
+    </div>
+    <div class="divbottom">
+          <div style="height:10px;"></div>
+          <div class="divbottom1">关于NIIT | 广告服务 | 开放平台 | 社区 | 客服 | 友情链接 </div>
+          <div class="divbottom1">联系我们 | 加入NIIT | 举报投诉 </div>
+          <div class="divbottom1">Copyright 2012-2013 Tencent AllRightRervered</div>
+     </div>
+   </div>  
+    <script>
+     //父板块窗帘式隐藏子版块
+       $(function(){
+  		//alert($("img").size());
+  		$(".slideimg").click(function(){
+  		//alert($(this).attr("src"));
+  			if($(this).attr("src")=="image/fold.gif")
+  			{
+  				$(this).attr("src","image/unfold.gif");
+  			}else{
+  				$(this).attr("src","image/fold.gif");
+  			}
+  			
+  			//下面的div隐藏
+  			
+  			$(this).parent().parent().next().slideToggle(1000);
+  		})
+  		
+  	})
+  	//移到哪个表格哪个表格的颜色就变
+  	$(function(){
+  	$("table>tbody>tr").mouseover(function(){
+  	$(this).toggleClass("divbgcolor");
+  	}).mouseout(function(){
+  	 $(this).toggleClass("divbgcolor");
+  	})
+  	})
+  	
+  	
+  </script>
+       
+	</body>
+</html>
