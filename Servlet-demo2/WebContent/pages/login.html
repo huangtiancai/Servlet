@@ -13,9 +13,14 @@
  -->
  
  <!--      
- 	   http://localhost:8080/Servlet-demo/index.html 访问表单页面
- 	   action="/Servlet-demo/myServlet"              访问的servlet路径
- 	   http://localhost:8080/Servlet-demo/myServlet?username=tom   表单参数提交至servlet处理
+ 	   http://localhost:8080/Servlet-demo2/pages/login.html 访问表单页面
+ 	   
+ 	   1.action="/Servlet-demo2/loginServlet"
+ 	   2.表单参数  
+ 
+ 	         表单提交时通过url-pattern，访问指定的LoginServlet，同时表单参数会追加到url后
+ 	         
+ 	   例如：http://localhost:8080/Servlet-demo2/loginServlet?username=jack&password=1234&登录=提交
  -->
 
 
