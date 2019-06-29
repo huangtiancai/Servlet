@@ -24,7 +24,7 @@ public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//解决post乱码
 		request.setCharacterEncoding("utf-8");
 		
@@ -55,15 +55,22 @@ public class LoginServlet extends HttpServlet {
 			response.getWriter().write("登录失败！");			
 		}else{
 			System.out.println("登录成功！");
+			response.getWriter().write("登录成功！");
 			//登录成功后,服务器端跳转（页面转发）：/代表的是项目的根路径(跳转后地址不一定变)
-			request.getRequestDispatcher("/pages/main.html").forward(request, response);
+			
 		}	
+		
+		//获取请求的信息
+		//获取请求的方式
+		String method = request.getMethod();
+		System.out.println("请求的方法："+method); //form表单后的method
+		
 		
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		doGet(request, response);
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("--------");
+		doPost(request, response);
 	}
 
 }
