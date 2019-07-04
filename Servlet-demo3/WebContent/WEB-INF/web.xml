@@ -9,7 +9,6 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-
   <servlet>
     <description></description>
     <display-name>MyServlet</display-name>
@@ -20,7 +19,6 @@
     <servlet-name>MyServlet</servlet-name>
     <url-pattern>/myServlet</url-pattern>
   </servlet-mapping>
-
   <servlet>
     <description></description>
     <display-name>LoginServlet</display-name>
@@ -30,5 +28,15 @@
   <servlet-mapping>
     <servlet-name>LoginServlet</servlet-name>
     <url-pattern>/loginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MyServlet1</display-name>
+    <servlet-name>MyServlet1</servlet-name>
+    <servlet-class>com.htc.web.MyServlet1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MyServlet1</servlet-name>
+    <url-pattern>/myServlet1</url-pattern>
   </servlet-mapping>
 </web-app>
