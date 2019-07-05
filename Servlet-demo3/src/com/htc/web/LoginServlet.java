@@ -60,6 +60,17 @@ public class LoginServlet extends HttpServlet {
 			
 		}	
 		
+		
+		/**
+		 * HttpServletRequest 接口 的对象 ->父接口：ServletRequest
+		 */
+		//1.获取单个参数值
+		//String value = request.getParameter(name); //上述已经使用过
+		
+		//2.获取同名参数的多个值（如：例如复选框或者url地址栏中有多个参数相同）  
+		String[] values = request.getParameterValues("favs");
+		
+		
 		//获取请求的信息
 		//获取请求的方式
 		String method = request.getMethod();
