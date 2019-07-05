@@ -1,6 +1,7 @@
 package com.htc.web;
 
 import java.io.IOException;
+import java.util.Enumeration;
 import java.util.Map;
 
 import javax.servlet.ServletException;
@@ -50,6 +51,16 @@ public class MyServlet extends HttpServlet {
 			}
 		}
 		
+		System.out.println("------4--------");
+		Enumeration<String> names = request.getParameterNames();
+		System.out.println("names:"+names);
+		System.out.println(names.hasMoreElements());
+		
+		String name = names.nextElement();      //获取参数名
+		String v = this.getInitParameter(name); //获取参数值
+		System.out.println(name+" "+v);
+		
+
 		//发出响应
 	    System.out.println("--------------发出响应---------------");
 		//使用response对象用于向浏览器发出响应

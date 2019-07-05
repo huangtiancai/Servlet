@@ -26,6 +26,7 @@
     <servlet-name>MyServlet</servlet-name>
     <url-pattern>/myServlet</url-pattern>
   </servlet-mapping>
+  
   <servlet>
     <description></description>
     <display-name>LoginServlet</display-name>
