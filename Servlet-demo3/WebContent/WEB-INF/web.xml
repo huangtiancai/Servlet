@@ -9,13 +9,10 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  
-  <!-- 全局参数 -->
   <context-param>
-  	<param-name>encode</param-name>
-  	<param-value>GBK</param-value>
+    <param-name>encode</param-name>
+    <param-value>GBK</param-value>
   </context-param>
-  	
   <servlet>
     <description></description>
     <display-name>MyServlet</display-name>
@@ -26,7 +23,6 @@
     <servlet-name>MyServlet</servlet-name>
     <url-pattern>/myServlet</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <description></description>
     <display-name>LoginServlet</display-name>
@@ -37,25 +33,52 @@
     <servlet-name>LoginServlet</servlet-name>
     <url-pattern>/loginServlet</url-pattern>
   </servlet-mapping>
-  
-  
   <servlet>
     <description></description>
     <display-name>MyServlet1</display-name>
     <servlet-name>MyServlet1</servlet-name>
     <servlet-class>com.htc.web.MyServlet1</servlet-class>
-    <!-- 局部参数 -->
     <init-param>
-    	<param-name>encode</param-name>
-    	<param-value>UTF-8</param-value>
+      <param-name>encode</param-name>
+      <param-value>UTF-8</param-value>
     </init-param>
     <init-param>
-    	<param-name>color</param-name>
-    	<param-value>red</param-value>
+      <param-name>color</param-name>
+      <param-value>red</param-value>
     </init-param>
   </servlet>
   <servlet-mapping>
     <servlet-name>MyServlet1</servlet-name>
     <url-pattern>/myServlet1</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CookieServlet</display-name>
+    <servlet-name>CookieServlet</servlet-name>
+    <servlet-class>com.htc.web.CookieServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CookieServlet</servlet-name>
+    <url-pattern>/cookieServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CookieServlet2</display-name>
+    <servlet-name>CookieServlet2</servlet-name>
+    <servlet-class>com.htc.web.CookieServlet2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CookieServlet2</servlet-name>
+    <url-pattern>/cookieServlet2</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>TimeServlet</display-name>
+    <servlet-name>TimeServlet</servlet-name>
+    <servlet-class>com.htc.web.TimeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TimeServlet</servlet-name>
+    <url-pattern>/timeServlet</url-pattern>
   </servlet-mapping>
 </web-app>

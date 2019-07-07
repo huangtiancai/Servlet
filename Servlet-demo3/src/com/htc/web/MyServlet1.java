@@ -64,16 +64,6 @@ public class MyServlet1 extends HttpServlet {
 			System.out.println(name+":"+v);
 		}
 		
-		//获取页面所有的参数的name属性-->这里没有页面，所以在LoginServlet中使用
-		Enumeration<String> names1 = request.getParameterNames();
-		System.out.println("names1:"+names1);//false
-		System.out.println(names1.hasMoreElements());
-		while(names1.hasMoreElements()){
-			String name1 = names1.nextElement();      //获取参数名
-			String v1 = this.getInitParameter(name1); //获取参数值
-			System.out.println(name1+":"+v1);
-		}
-
 		/**
 		 * 2.获取全局的参数(<context-param>)	   
 		 */

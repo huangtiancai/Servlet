@@ -51,14 +51,19 @@ public class MyServlet extends HttpServlet {
 			}
 		}
 		
-		System.out.println("------4--------");
-		Enumeration<String> names = request.getParameterNames();
-		System.out.println("names:"+names);
-		System.out.println(names.hasMoreElements());
 		
-		String name = names.nextElement();      //获取参数名
-		String v = this.getInitParameter(name); //获取参数值
-		System.out.println(name+":"+v);
+		System.out.println("------4--------");
+		//获取页面所有的参数的name属性
+		//request.getParameterNames()方法是将发送请求页面中form表单里所有具有name属性的表单对象获取(包括button).返回一个Enumeration类型的枚举.
+		Enumeration<String> names = request.getParameterNames();
+		while(names.hasMoreElements()){
+			String name = names.nextElement();
+			String[]value = request.getParameterValues(name);
+			for(String v:values){
+				System.out.println(v);
+			}
+		}
+
 		
 		
 		
