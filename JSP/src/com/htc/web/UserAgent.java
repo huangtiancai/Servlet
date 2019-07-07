@@ -26,22 +26,22 @@ public class UserAgent extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//Java½âÎöUser-AgentĞÅÏ¢
-		//µÚÒ»ÖÖ·½·¨£ºÍ¨¹ıµÚÈı·½°üÀ´ÊµÏÖ(uasparser-0.6.1.jar/jregex-1.2_01.jar)
-		//1.ÒÀÀµ°üÒıÈë£¨uasparser-0.6.1.jar/jregex-1.2_01.jar£©-Ö±½ÓÌí¼Óµ½libÏÂ
+		//Javaè§£æUser-Agentä¿¡æ¯
+		//ç¬¬ä¸€ç§æ–¹æ³•ï¼šé€šè¿‡ç¬¬ä¸‰æ–¹åŒ…æ¥å®ç°(uasparser-0.6.1.jar/jregex-1.2_01.jar)
+		//1.ä¾èµ–åŒ…å¼•å…¥ï¼ˆuasparser-0.6.1.jar/jregex-1.2_01.jarï¼‰-ç›´æ¥æ·»åŠ åˆ°libä¸‹
 		
-		//2.´úÂëÊµÏÖ£¬ä¯ÀÀÆ÷¡¢ÏµÍ³»ñÈ¡
-		//»ñÈ¡ä¯ÀÀÆ÷ĞÅÏ¢
+		//2.ä»£ç å®ç°ï¼Œæµè§ˆå™¨ã€ç³»ç»Ÿè·å–
+		//è·å–æµè§ˆå™¨ä¿¡æ¯
 		String ua = request.getHeader("User-Agent");
 		UserAgentInfo userAgentInfo = UserAgent.uasparser.parse(ua);
 		
-		System.out.println("²Ù×÷ÏµÍ³£º"+userAgentInfo.getOsFamily());
-		System.out.println("²Ù×÷ÏµÍ³ÏêÏ¸Ãû³Æ£º"+userAgentInfo.getOsName());
-		System.out.println("ÀàĞÍ£º"+userAgentInfo.getType());
-		System.out.println("ä¯ÀÀÆ÷Ãû³ÆºÍ°æ±¾£º"+userAgentInfo.getUaName());
-		System.out.println("ä¯ÀÀÆ÷Ãû³Æ£º"+userAgentInfo.getUaFamily());
-		System.out.println("ä¯ÀÀÆ÷°æ±¾£º"+userAgentInfo.getBrowserVersionInfo());
-		System.out.println("Éè±¸ÀàĞÍ£º"+userAgentInfo.getDeviceType());
+		System.out.println("æ“ä½œç³»ç»Ÿï¼š"+userAgentInfo.getOsFamily());
+		System.out.println("æ“ä½œç³»ç»Ÿè¯¦ç»†åç§°ï¼š"+userAgentInfo.getOsName());
+		System.out.println("ç±»å‹ï¼š"+userAgentInfo.getType());
+		System.out.println("æµè§ˆå™¨åç§°å’Œç‰ˆæœ¬ï¼š"+userAgentInfo.getUaName());
+		System.out.println("æµè§ˆå™¨åç§°ï¼š"+userAgentInfo.getUaFamily());
+		System.out.println("æµè§ˆå™¨ç‰ˆæœ¬ï¼š"+userAgentInfo.getBrowserVersionInfo());
+		System.out.println("è®¾å¤‡ç±»å‹ï¼š"+userAgentInfo.getDeviceType());
 		
 	}
 

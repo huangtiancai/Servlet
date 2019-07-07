@@ -1,17 +1,20 @@
 package com.htc.test;
 
-//µ¼ÈëInetAddressµÄjar
+//å¯¼å…¥InetAddressçš„jar
 import java.net.InetAddress;
 
 
 public class Main {
-	//Java ÊµÀı - »ñÈ¡±¾»úipµØÖ·¼°Ö÷»úÃû
+	//Java å®ä¾‹ - è·å–æœ¬æœºipåœ°å€åŠä¸»æœºå
 	public static void main(String[] args) throws Exception {
 		InetAddress addr = InetAddress.getLocalHost();
 		System.out.println("addr:"+addr);//addr:ks01pc23/172.30.32.67
 		String hostAddress = addr.getHostAddress();
 		String hostName = addr.getHostName();
-		System.out.println("Ö÷»úÃûµØÖ·£º"+hostAddress);//Ö÷»úÃûµØÖ·£º172.30.32.67
-		System.out.println("Ö÷»úÃû£º"+hostName);//Ö÷»úÃû£ºks01pc23		
+		System.out.println("ä¸»æœºååœ°å€ï¼š"+hostAddress);//ä¸»æœºååœ°å€ï¼š172.30.32.67
+		System.out.println("ä¸»æœºåï¼š"+hostName);//ä¸»æœºåï¼šks01pc23		
 	}
 }
+
+
+

@@ -9,11 +9,11 @@ import cz.mallat.uasparser.UASparser;
 import cz.mallat.uasparser.UserAgentInfo;
 
 public class UserAgent {
-	//Java½âÎöUser-AgentĞÅÏ¢
-	//µÚÒ»ÖÖ·½·¨£ºÍ¨¹ıµÚÈı·½°üÀ´ÊµÏÖ(uasparser-0.6.1.jar/jregex-1.2_01.jar)
-	//1.ÒÀÀµ°üÒıÈë£¨uasparser-0.6.1.jar/jregex-1.2_01.jar£©-Ö±½ÓÌí¼Óµ½libÏÂ
+	//Javaè§£æUser-Agentä¿¡æ¯
+	//ç¬¬ä¸€ç§æ–¹æ³•ï¼šé€šè¿‡ç¬¬ä¸‰æ–¹åŒ…æ¥å®ç°(uasparser-0.6.1.jar/jregex-1.2_01.jar)
+	//1.ä¾èµ–åŒ…å¼•å…¥ï¼ˆuasparser-0.6.1.jar/jregex-1.2_01.jarï¼‰-ç›´æ¥æ·»åŠ åˆ°libä¸‹
 	
-	//2.´úÂëÊµÏÖ
+	//2.ä»£ç å®ç°
 	static UASparser  uasparser = null;
 	static {
 		try {
@@ -26,17 +26,17 @@ public class UserAgent {
 	}
 	
 	public static void main(String[] args) {
-		//¶ÔÒÑÖªµÄua½øĞĞ½âÎö
+		//å¯¹å·²çŸ¥çš„uaè¿›è¡Œè§£æ
 		String ua = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36";
 		try {
 			UserAgentInfo userAgentInfo = UserAgent.uasparser.parse(ua);
-			System.out.println("²Ù×÷ÏµÍ³£º"+userAgentInfo.getOsFamily());
-			System.out.println("²Ù×÷ÏµÍ³ÏêÏ¸Ãû³Æ£º"+userAgentInfo.getOsName());
-			System.out.println("¿Í»§¶ËÀàĞÍ£º"+userAgentInfo.getType());
-			System.out.println("ä¯ÀÀÆ÷Ãû³ÆºÍ°æ±¾£º"+userAgentInfo.getUaName());
-			System.out.println("ä¯ÀÀÆ÷Ãû³Æ£º"+userAgentInfo.getUaFamily());
-			System.out.println("ä¯ÀÀÆ÷°æ±¾£º"+userAgentInfo.getBrowserVersionInfo());
-			System.out.println("Éè±¸ÀàĞÍ£º"+userAgentInfo.getDeviceType());
+			System.out.println("æ“ä½œç³»ç»Ÿï¼š"+userAgentInfo.getOsFamily());
+			System.out.println("æ“ä½œç³»ç»Ÿè¯¦ç»†åç§°ï¼š"+userAgentInfo.getOsName());
+			System.out.println("å®¢æˆ·ç«¯ç±»å‹ï¼š"+userAgentInfo.getType());
+			System.out.println("æµè§ˆå™¨åç§°å’Œç‰ˆæœ¬ï¼š"+userAgentInfo.getUaName());
+			System.out.println("æµè§ˆå™¨åç§°ï¼š"+userAgentInfo.getUaFamily());
+			System.out.println("æµè§ˆå™¨ç‰ˆæœ¬ï¼š"+userAgentInfo.getBrowserVersionInfo());
+			System.out.println("è®¾å¤‡ç±»å‹ï¼š"+userAgentInfo.getDeviceType());
 			
 			
 		} catch (IOException e) {
@@ -45,12 +45,6 @@ public class UserAgent {
 		}
 		
 	}
-	
-	
-	
-	
-	
-	
 	
 	
 	

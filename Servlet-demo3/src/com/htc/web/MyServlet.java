@@ -58,7 +58,10 @@ public class MyServlet extends HttpServlet {
 		
 		String name = names.nextElement();      //获取参数名
 		String v = this.getInitParameter(name); //获取参数值
-		System.out.println(name+" "+v);
+		System.out.println(name+":"+v);
+		
+		
+		
 		
 
 		//发出响应

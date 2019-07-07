@@ -11,36 +11,36 @@ public class UserAgent1 extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("ÇëÇó·½·¨£º"+request.getMethod());
-		System.out.println("URL£º"+request.getRequestURL());
-		System.out.println("URI£º"+request.getRequestURI());
-		System.out.println("CharacterEncoding£º"+request.getCharacterEncoding());
-		System.out.println("ContentLength£º"+request.getContentLength());
-		System.out.println("ContentType£º"+request.getContentType());
-		System.out.println("ContextPath£º"+request.getContextPath());
-		System.out.println("DateHeader£º"+request.getDateHeader(getServletName()));
-		System.out.println("DateHeader£º"+request.getDateHeader(getServletInfo()));
-		System.out.println("Header£º"+request.getHeader(getServletName()));
-		System.out.println("Header£º"+request.getHeader(getServletInfo()));
-		System.out.println("LocalAddr£º"+request.getLocalAddr());
-		System.out.println("LocalName£º"+request.getLocalName());
-		System.out.println("LocalPort£º"+request.getLocalPort());
-		System.out.println("RemoteAddr£º"+request.getRemoteAddr());
-		System.out.println("RemoteHost£º"+request.getRemoteHost());
-		System.out.println("RemotePort£º"+request.getRemotePort());
-		System.out.println("RemoteUser£º"+request.getRemoteUser());
-		System.out.println("ServerName£º"+request.getServerName());
-		System.out.println("ServerPort£º"+request.getServerPort());
-		System.out.println("ServletPath£º"+request.getServletPath());
-		System.out.println("hashCode£º"+request.hashCode());
-		System.out.println("toString£º"+request.toString());
-		System.out.println("Cookies£º"+request.getCookies());
-		System.out.println("HeaderNames£º"+request.getHeaderNames());
-		System.out.println("Headers£º"+request.getHeaders(getServletName()));
-		System.out.println("Locale£º"+request.getLocale());
-		System.out.println("Locales£º"+request.getLocales());
-		System.out.println("ServletContext£º"+request.getServletContext());
-		System.out.println("Session£º"+request.getSession());
+		System.out.println("è¯·æ±‚æ–¹æ³•ï¼š"+request.getMethod());
+		System.out.println("URLï¼š"+request.getRequestURL());
+		System.out.println("URIï¼š"+request.getRequestURI());
+		System.out.println("CharacterEncodingï¼š"+request.getCharacterEncoding());
+		System.out.println("ContentLengthï¼š"+request.getContentLength());
+		System.out.println("ContentTypeï¼š"+request.getContentType());
+		System.out.println("ContextPathï¼š"+request.getContextPath());
+		System.out.println("DateHeaderï¼š"+request.getDateHeader(getServletName()));
+		System.out.println("DateHeaderï¼š"+request.getDateHeader(getServletInfo()));
+		System.out.println("Headerï¼š"+request.getHeader(getServletName()));
+		System.out.println("Headerï¼š"+request.getHeader(getServletInfo()));
+		System.out.println("LocalAddrï¼š"+request.getLocalAddr());
+		System.out.println("LocalNameï¼š"+request.getLocalName());
+		System.out.println("LocalPortï¼š"+request.getLocalPort());
+		System.out.println("RemoteAddrï¼š"+request.getRemoteAddr());
+		System.out.println("RemoteHostï¼š"+request.getRemoteHost());
+		System.out.println("RemotePortï¼š"+request.getRemotePort());
+		System.out.println("RemoteUserï¼š"+request.getRemoteUser());
+		System.out.println("ServerNameï¼š"+request.getServerName());
+		System.out.println("ServerPortï¼š"+request.getServerPort());
+		System.out.println("ServletPathï¼š"+request.getServletPath());
+		System.out.println("hashCodeï¼š"+request.hashCode());
+		System.out.println("toStringï¼š"+request.toString());
+		System.out.println("Cookiesï¼š"+request.getCookies());
+		System.out.println("HeaderNamesï¼š"+request.getHeaderNames());
+		System.out.println("Headersï¼š"+request.getHeaders(getServletName()));
+		System.out.println("Localeï¼š"+request.getLocale());
+		System.out.println("Localesï¼š"+request.getLocales());
+		System.out.println("ServletContextï¼š"+request.getServletContext());
+		System.out.println("Sessionï¼š"+request.getSession());
 	}
 
 

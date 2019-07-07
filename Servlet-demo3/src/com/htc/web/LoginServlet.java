@@ -68,13 +68,13 @@ public class LoginServlet extends HttpServlet {
 		//String value = request.getParameter(name); //上述已经使用过
 		
 		//2.获取同名参数的多个值（如：例如复选框或者url地址栏中有多个参数相同）  
-		String[] values = request.getParameterValues("favs");
-		
-		
+		//String[] values = request.getParameterValues("favs");
+			
 		//获取请求的信息
 		//获取请求的方式
-		String method = request.getMethod();
+		String method = request.getMethod();	
 		System.out.println("请求的方法："+method); //form表单后的method
+		
 		
 		
 	}
