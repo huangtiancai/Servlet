@@ -36,10 +36,12 @@ public class CookieServlet extends HttpServlet {
 		//删除cookie其实是发送一个新的cookie，设置生成时间为0，而且设置数据为空字符或则null，通过response对象发送之后，会，覆盖之前的cookie
 		//将cookie的name（key）保持一致，value 设置为 "";
 		cookie = new Cookie("username", "");
+		cookie1 = new Cookie("username1", "");
 		//设置存活时间为0
 		cookie.setMaxAge(0);
+		cookie1.setMaxAge(0);
 		//路径要发送cookie时保持一致，没有路径不需要设置
-		cookie.setPath("/");
+		//cookie.setPath("/");
 		
 		
 		//如何将cookie发送给浏览器？给浏览器发出响应的是response对象，将cookie交给response发送

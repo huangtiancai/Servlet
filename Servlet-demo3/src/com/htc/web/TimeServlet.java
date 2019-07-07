@@ -26,8 +26,6 @@ public class TimeServlet extends HttpServlet {
 		//两次请求
 		//第一次将访问，保存到cookie
 		Cookie cookie = new Cookie("time", new Date().toLocaleString());
-		cookie.setMaxAge(60*60*24*7);
-		cookie.setPath("/");
 		response.addCookie(cookie);
 		
 		//第二次将访问
@@ -41,6 +39,15 @@ public class TimeServlet extends HttpServlet {
 				}
 			}
 		}
+		
+		
+		//将cookie的name（key）保持一致，value 设置为 "";
+		cookie = new Cookie("time", "");
+		//设置存活时间为0
+		cookie.setMaxAge(0);
+		
+		response.addCookie(cookie);
+
 	}
 
 }

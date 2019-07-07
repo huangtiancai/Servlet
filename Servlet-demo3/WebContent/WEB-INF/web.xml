@@ -9,6 +9,14 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+  <display-name>session</display-name>
+  <!-- Session的存活时间 -->
+  <session-config>
+  	<session-timeout>40</session-timeout>
+  </session-config>
+  
+  
   <context-param>
     <param-name>encode</param-name>
     <param-value>GBK</param-value>
@@ -80,5 +88,15 @@
   <servlet-mapping>
     <servlet-name>TimeServlet</servlet-name>
     <url-pattern>/timeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SessionServlet</display-name>
+    <servlet-name>SessionServlet</servlet-name>
+    <servlet-class>com.htc.web.SessionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SessionServlet</servlet-name>
+    <url-pattern>/sessionServlet</url-pattern>
   </servlet-mapping>
 </web-app>
