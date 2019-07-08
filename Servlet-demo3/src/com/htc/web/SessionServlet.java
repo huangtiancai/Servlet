@@ -22,7 +22,7 @@ public class SessionServlet extends HttpServlet {
 		System.out.println(session);
 		
 		session.setAttribute("addr", "北京");
-		String addr = (String) session.getAttribute("addr");
+		String addr = (String) session.getAttribute("addr"); //简写为：request.getSession().getAttribute("addr");
 		System.out.println(addr);
 		
 		//手动销毁session容器, 使用 session.invalidate()

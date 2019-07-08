@@ -31,6 +31,25 @@ public class LoginServlet extends HttpServlet {
 		//解决post乱码
 		request.setCharacterEncoding("utf-8");
 		
+		//用户请求中的验证码获取
+		String vcode = request.getParameter("vcode");
+		System.out.println("验证码："+vcode);
+		
+		//与session中保存的验证码进行校验
+		//获取session中的验证码(获取session域中的loginCapcha对象)
+		String loginCapcha = (String) request.getSession().getAttribute("loginCapcha");
+		if(!loginCapcha.equalsIgnoreCase(vcode)){
+			//验证码错误，告诉用户，页面提示
+			request.setAttribute("msg", "验证码错误！");
+			//request.getRequestDispatcher("pages/login.jsp").forward(request, response);//这种写法错误
+			
+			//response.sendRedirect("/Servlet-demo3/pages/login.jsp");     //第一种写法
+			System.out.println(request.getContextPath());///Servlet-demo3
+			
+			response.sendRedirect(request.getContextPath()+"/pages/login.jsp");  //第二种写法
+			return ;
+		}
+		
 		System.out.println("进入LoginServlet");
 		//前台login.html提交的参数会追加到
 		//http://localhost:8080/Servlet-demo2/loginServlet?username=admin&password=123456(直接在url地址后加参数)
@@ -56,10 +75,15 @@ public class LoginServlet extends HttpServlet {
 		
 		if(loginUser==null){
 			System.out.println("登录失败！");
-			response.getWriter().write("登录失败！");			
+//			response.getWriter().write("登录失败！");			
+			response.sendRedirect(request.getContextPath()+"/pages/login.jsp");
 		}else{
 			System.out.println("登录成功！");
 			response.getWriter().write("登录成功！");
+			response.sendRedirect(request.getContextPath());
+			
+			
+			
 			//注意：这里的转发和重定向都是以访问的servlet为基础
 			//登录成功后,服务器端跳转（页面转发）：/代表的是项目的根路径(跳转后地址不一定变)
 			//request.getRequestDispatcher("/index.html").forward(request, response);
@@ -67,7 +91,7 @@ public class LoginServlet extends HttpServlet {
 			
 			//在sendRedict中url前必须加上当前web程序的路径名
 			//request.getContextPath()+"/index.html") 或者index.html
-			response.sendRedirect(request.getContextPath()+"/index.html");
+			//response.sendRedirect(request.getContextPath()+"/index.html");
 			//地址栏:http://localhost:8080/Servlet-demo3/index.html
 		}	
 		
