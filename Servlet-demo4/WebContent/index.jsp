@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<!-- 转发到index1.html页面 -->
+<!--转发到index1.html页面 -->
 <jsp:forward page="index1.html"></jsp:forward>
 </body>
 </html>
