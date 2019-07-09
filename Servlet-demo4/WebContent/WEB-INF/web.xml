@@ -139,4 +139,14 @@
     <servlet-name>CheckUserAction</servlet-name>
     <url-pattern>/checkUser.action</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>FindTopicAction</display-name>
+    <servlet-name>FindTopicAction</servlet-name>
+    <servlet-class>com.htc.web.FindTopicAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FindTopicAction</servlet-name>
+    <url-pattern>/findTopic.action</url-pattern>
+  </servlet-mapping>
 </web-app>
