@@ -29,6 +29,19 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao{
 			e.printStackTrace();
 			throw new RuntimeException("用户登陆失败!");
 		}	
-	}		
+	}
+
+	@Override
+	public User checkUser(String username) {
+		String sql = "select * from user where username=?";
+		try {
+			return queryRunner.query(sql, new BeanHandler<User>(User.class), username);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
 	
 }

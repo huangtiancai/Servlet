@@ -23,6 +23,13 @@ public class UserServiceImpl implements UserService{
 		// TODO Auto-generated method stub
 		return userDao.login(user);
 	}
+
+
+	@Override
+	public User queryUser(String username) {
+		// TODO Auto-generated method stub
+		return userDao.checkUser(username);
+	}
 	
 	
 }

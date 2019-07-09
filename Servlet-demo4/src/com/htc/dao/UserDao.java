@@ -22,4 +22,5 @@ import com.htc.utils.C3P0Utils;
  */
 public interface UserDao {
 	User login(User user);
+	User checkUser(String username);
 }

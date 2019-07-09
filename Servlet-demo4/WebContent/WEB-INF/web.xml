@@ -9,15 +9,10 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  
-  <!-- 配置统一的错误页面  -->
   <error-page>
-  	<!-- 配置统一的错误页面  -->
-  	<error-code>500</error-code>
-  	<!-- 配置统一的错误页面  -->
-  	<location>/500.jsp</location>
+    <error-code>500</error-code>
+    <location>/500.jsp</location>
   </error-page>
-  
   <display-name>session</display-name>
   <session-config>
     <session-timeout>40</session-timeout>
@@ -133,5 +128,15 @@
   <servlet-mapping>
     <servlet-name>TestServlet</servlet-name>
     <url-pattern>/testServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CheckUserAction</display-name>
+    <servlet-name>CheckUserAction</servlet-name>
+    <servlet-class>com.htc.web.CheckUserAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CheckUserAction</servlet-name>
+    <url-pattern>/checkUser.action</url-pattern>
   </servlet-mapping>
 </web-app>
