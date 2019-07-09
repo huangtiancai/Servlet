@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+<!-- 引入网站地址栏头像favicon:Favorites Icon -->
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+</head>
+<body>
+<!-- 
+请求的方式：
+第一种：通过表单与服务器端交互
+步骤：      1.添加form标签：必须写action="服务器端地址" 
+	  2.具体的表单标签，如input type="text"  必须添加name属性
+	  3.必须得有提交动作：submit自动提交       button/img或者其他任何标签必须手动写js代码实现提交。
+	     后台获取参数：request.getParameter("name属性值");
+<img id="img" src="">
+JS代码：
+$("#img").click(function(){
+	window.location.href="../topic.action?boardId="
+})
+
+第二种：通过<a href="../topic.action?boardId=12&pageNo=1&favs=1&favs=2">发送请求
+第三种：ajax异步请求
+-->
+
+
+<!-- 对于提交上了的用户名，爱好，我们必须获取后，才能处理，那么请求参数如何获取？
+	   使用服务器给我提供的一个对象Request对象
+ -->
+ <!--  
+ 	   http://localhost:8080/Servlet-demo4/index1.html 				访问表单页面
+ 	   action="/Servlet-demo4/myServlet"             				 访问的servlet路径
+ 	   http://localhost:8080/Servlet-demo4/myServlet?username=tom     表单参数提交至servlet处理
+ -->
+ <!-- 第一种：通过表单与服务器端交互 -->
+<!-- 
+
+<form action="/Servlet-demo4/myServlet">
+	用户名：<input type="text" name="username"><br>
+	爱好：<input type="checkbox" name="hobby" value="football">足球
+	<input type="checkbox" name="hobby" value="basketball">篮球
+	<input type="checkbox" name="hobby" value="ping-pang-ball">乒乓球<br>
+	<input type="submit" value="提交">
+	
+</form>
+ -->
+
+ <!-- 第二种：通过<a href="../..?..">发送请求 -->
+ <!-- 需求：根据不同请求参数，显示不同名称 -->
+<!-- 
+ href="/day15/test?param=3"
+ -->
+ 
+<a href="/Servlet-demo4/testServlet?param=1">参数1</a>
+<a href="/Servlet-demo4/testServlet?param=2">参数2</a>
+<a href="/Servlet-demo4/testServlet?param=3">参数3</a>
+
+
+</body>
+</html>
