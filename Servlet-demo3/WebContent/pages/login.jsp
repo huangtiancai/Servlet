@@ -65,7 +65,7 @@
  
           <tr>
               <th></td>
-              <td><input type="submit" name="登录"/></td>              
+              <td><input type="submit" name="登录" value="登录"></td>              
           </tr>			
       </table>
 </form>
