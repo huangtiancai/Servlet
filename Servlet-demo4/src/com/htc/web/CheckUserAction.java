@@ -34,8 +34,8 @@ public class CheckUserAction extends HttpServlet {
 		User user = us.queryUser(username);
 		String result = "";
 		if(user!=null){
-			System.out.println("用户名已存在！");
-			result = "用户名已存在！";
+			System.out.println("用户名已存在");
+			result = "用户名已存在";
 		}
 		response.setContentType("text/html;charset=UTF-8");
 		response.getWriter().write(result);
