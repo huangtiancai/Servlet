@@ -28,7 +28,7 @@ public class CategoryServlet extends HttpServlet {
 		//JSONLIB:list集合-->json
 		JSONArray jsonStr = JSONArray.fromObject(lists);
 		System.out.println(jsonStr);
-		System.out.println(jsonStr.toString());
+		//System.out.println(jsonStr.toString());
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

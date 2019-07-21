@@ -149,4 +149,14 @@
     <servlet-name>FindTopicAction</servlet-name>
     <url-pattern>/findTopic.action</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServerInterface</display-name>
+    <servlet-name>ServerInterface</servlet-name>
+    <servlet-class>com.htc.web.ServerInterface</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServerInterface</servlet-name>
+    <url-pattern>/serverInterface</url-pattern>
+  </servlet-mapping>
 </web-app>
