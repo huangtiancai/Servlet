@@ -37,7 +37,20 @@ public class CheckUserAction extends HttpServlet {
 			System.out.println("用户名已存在");
 			result = "用户名已存在";
 		}
+		
+		//前端使用 setRequestHeader() 来添加的 HTTP 头
+		//xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+		
+		//后台获得请求体
+		String requestType = request.getContentType();
+		System.out.println("获得请求体:"+requestType);//application/x-www-form-urlencoded
+		
+		//通过response设置响应头(设置允许跨域-允许所有域名都可以访问，不够安全)
+		response.setHeader("Access-Control-Allow-Origin", "*");
+		//通过response设置响应体
+		//设置响应的编码方式
 		response.setContentType("text/html;charset=UTF-8");
+		
 		response.getWriter().write(result);
 }
 

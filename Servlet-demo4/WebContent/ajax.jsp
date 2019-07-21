@@ -58,14 +58,17 @@
 				{
 					//解析响应的信息
 					var result = xmlhttp.responseText;
+					
 					//存在就是true  false-就是不存在
 					if(result)
 					{
-						//alert("该用户已经注册过，用户名不可用");
+						//alert("该用户已经注册过，用户名不可用");	
+						alert(result);
 						document.getElementById("userError").innerHTML="<font color='red'>该用户已经注册过，用户名不可用</font>";
 						isUser=false;
 					}else{
 						//alert("该用户名可用");
+						alert(result);
 						document.getElementById("userError").innerHTML="<font color='green'>该用户名可用</font>";
 						isUser=true;
 					}
