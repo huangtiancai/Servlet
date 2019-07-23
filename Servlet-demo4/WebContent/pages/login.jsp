@@ -41,7 +41,7 @@
  	   例如：http://localhost:8080/Servlet-demo2/loginServlet?username=jack&password=1234&登录=提交
  -->
 
-
+<!-- action="${pageContext.request.contextPath }/loginServlet -->
 <form action="/Servlet-demo3/loginServlet" method="post"> 
       <table>
           <tr>
