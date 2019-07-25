@@ -1,0 +1,42 @@
+分析MVC实现的思路
+页面发送请求----->核心控制器------>找对应的模型（业务模型）------>进行处理，处理的结果返回核心控制器---->核心控制器统一转发
+
+
+核心控制需要做的事情
+1.接收所有的请求 *.action:user.action------UserAction  /user.action-----UserAction
+class  UserAction
+
+public String regist(?)
+
+public ? login(?)]
+
+
+
+public class BoardAction{
+
+}
+
+
+2.根据请求判断请求的模型（业务模型）
+3.调用模型中相应的方法
+4.接收返回值，作为跳转的地址，进行统一分发
+
+
+CoreController
+
+
+二、返回值：
+第一种情况：返回一个url地址
+String:
+forward
+redirect
+
+第二种情况：不返回地址，在action中直接response写东西：
+void
+
+一般用于ajax请求：response.getWriter().write("简单字符串");
+				 response.getWriter().write(json字符串);
+				 return "":跳转
+
+
+[{},{},{}]
