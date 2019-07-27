@@ -1,4 +1,8 @@
 分析MVC实现的思路
+
+CoreController
+BaseServlet
+
 页面发送请求----->核心控制器------>找对应的模型（业务模型）------>进行处理，处理的结果返回核心控制器---->核心控制器统一转发
 
 
@@ -9,8 +13,6 @@ class  UserAction
 public String regist(?)
 
 public ? login(?)]
-
-
 
 public class BoardAction{
 

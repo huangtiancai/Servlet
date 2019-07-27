@@ -21,39 +21,7 @@ public class CoreController extends HttpServlet {
 		//获取用户请求的方法
 		String methodName = request.getParameter("method");
 		System.out.println("method:"+methodName);
-		
-		//判断方法名是否为空 ""/null
-		if(methodName.trim().isEmpty() || methodName==null){
-			throw new RuntimeException("你没有传递method参数!无法确定你要调用的方法!");
-		}
-		
-		//1.获取当前类的class对象
-		Class c = this.getClass();
-		
-		//2.通过当前类的class对象的getMethod()方法查找是否存在对应方法
-		Method method = null;
-		try {
-			method = c.getMethod(methodName, HttpServletRequest.class,HttpServletResponse.class);
-		} catch (Exception e) {
-			throw new RuntimeException("你要调用的方法!"+methodName+"不存在!");
-		}
-		
-		//3. 通过反射动态的调用对应的方法
-		try {
-			String result=(String)method.invoke(this, request,response);
-		} catch (IllegalAccessException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IllegalArgumentException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (InvocationTargetException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		
-		
+
 		String uri = request.getRequestURI();
 		System.out.println("uri:"+uri);//uri:/MVC/user.action
 		
