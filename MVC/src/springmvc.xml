@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+	<model>
+		<action name="user.action" class="com.htc.model.UserAction"></action>
+	</model>
+	<model>
+		<action name="board.action" class="com.htc.model.BoardAction"></action>
+	</model>
+	<model>
+		<action name="topic.action" class="com.htc.model.TopicAction"></action>
+	</model>
+	
+	
+</beans>
