@@ -38,7 +38,7 @@ public class UserServlet extends BaseServlet {
 		if(isMultipart){
 			//指定上传文件的路径
 			uploadFilePath=request.getSession().getServletContext().getRealPath("/upload");
-			//如果目录不存在 创建一个姓的目录
+			//如果目录不存在 创建一个新的目录
 			File saveDir=new File(uploadFilePath);
 			//判断是否存在
 			if(!saveDir.exists()){

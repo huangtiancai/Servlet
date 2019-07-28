@@ -1,0 +1,17 @@
+//		String path = request.getContextPath();
+//		String path1 =  request.getRealPath("/");
+//		String path2 = request.getSession().getServletContext().getContextPath();
+//		String path3 = request.getSession().getServletContext().getRealPath("/");
+//		String path4 = request.getSession().getServletContext().getRealPath("");
+//		
+//		String realPath = path3.substring(0, path3.lastIndexOf(request.getContextPath().replace("/", "")));
+//		
+//		System.out.println("path:"+path);
+//		System.out.println("path1:"+path1);
+//		System.out.println("path2:"+path2);
+//		System.out.println("path3:"+path3);
+//		System.out.println("path4:"+path4);
+//		System.out.println("realPath:"+realPath);
+//		
+		//D:\javahtc\Repository\web\BaseServlet
+		
