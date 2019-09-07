@@ -15,7 +15,6 @@ public class MathAction {
 		double b = 10.88;
 		double c = -10.45;
 		double d = -10.55;	
-		
 		// 强制转换
 		int m1 = (int) a;
 		int m2 = (int) b;
