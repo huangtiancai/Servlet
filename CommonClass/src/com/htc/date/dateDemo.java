@@ -541,7 +541,7 @@ public class dateDemo {
 		//去年的今天
 		c.setTime(now);
 		c.add(Calendar.YEAR, -1);
-		System.out.println("去年年的今天:"+formatDate(c.getTime()));
+		System.out.println("去年的今天:"+formatDate(c.getTime()));
 		
 		//明年的今天
 		c.setTime(now);
@@ -567,12 +567,11 @@ public class dateDemo {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		
 		Calendar c = Calendar.getInstance();
-		Date now  = new Date();
+		System.out.println("今天是："+sdf.format(c.getTime()));
 		
-		
-		c.add(Calendar.MONTH, +1);
-		c.set(Calendar.DAY_OF_MONTH, -3);
-		System.out.println(sdf.format(c.getTime()));
+		c.add(Calendar.MONTH, +2);
+		c.set(Calendar.DATE, -3);
+		System.out.println("下个月的倒数第3天是:"+sdf.format(c.getTime()));
 		
 	}
 	
