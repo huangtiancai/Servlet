@@ -6,6 +6,7 @@ package com.htc.date;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
@@ -47,6 +48,11 @@ public class dateDemo {
 		//d2 和 d3的对比
 		System.out.println(d3==d2);
 		System.out.println(d3.equals(d2));
+		
+		//设置日期 : 1970-01-01 08:00:00
+		Date d4 = new Date(0);
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		System.out.println(sdf.format(d4));
 		
 	}
 	
@@ -331,10 +337,244 @@ public class dateDemo {
 	}
 	
 	
+	/**
+	 * SimpleDateFormat 类：
+	 * 1.如果使用 DateFormat 类格式化日期/时间并不能满足要求,那么就需要使用 DateFormat 类的子类——SimpleDateFormat。
+	 * 2.SimpleDateFormat 是一个以与语言环境有关的方式来格式化和解析日期的具体类，它允许进行格式化（日期→文本）、解析（文本→日期）和规范化。SimpleDateFormat 使得可以选择任何用户定义的日期/时间格式的模式。
+	 * 
+	 * 使用步骤：
+	 * 1.使用SimpleDateFormat类的构造函数(构造方法)构造格式化日期的格式
+	 * 2.通过format(Date date)方法将指定的日期对象格式化为指定格式的字符串
+	 * 	
+	 * SimpleDateFormat 类主要有如下 3 种构造方法：
+		SimpleDateFormat()：用默认的格式和默认的语言环境构造 SimpleDateFormat。
+		SimpleDateFormat(String pattern)：用指定的格式和默认的语言环境构造 SimpleDateFormat。
+		SimpleDateFormat(String pattern,Locale locale)：用指定的格式和指定的语言环境构造 SimpleDateF ormat。
+	 * 
+	 */
 	
-	//使用simpleDateFormat
-	SimpleDateFormat sdf = new 
+	@Test
+	public void SimpleDateFormatTest(){
+		//创建Date对象，获取当前时间
+		Date d = new Date();
+		
+		//设置时间格式
+		SimpleDateFormat sd = new SimpleDateFormat("yyyy MM dd HH mm ss");
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy MM dd HH mm ss");
+		SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		SimpleDateFormat sdf2 = new SimpleDateFormat("今天是"+"yyyy 年 MM 月 dd 日 E HH 点 mm 分 ss 秒");
+		SimpleDateFormat sdf3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss",Locale.CHINA);
+		SimpleDateFormat sdf4 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss",Locale.US);
+		
+		//将当前时间袼式化为指定的格式
+		System.out.println(sd.format(d));//2019 09 10 11 23 58
+		System.out.println(sdf.format(d));//2019 09 10 11 23 58
+		System.out.println(sdf1.format(d));//2019-09-10 11:23:58
+		System.out.println(sdf2.format(d));//今天是2019 年 09 月 10 日 星期二 11 点 23 分 58 秒
+		System.out.println(sdf3.format(d));
+		System.out.println(sdf4.format(d));
+		
+	}
 	
+	/**
+	 * Calendar 类:抽象类
+	 * 1.创建 Calendar 对象不能使用 new 关键字，因为 Calendar 类是一个抽象类，
+	 * 	 	但是它提供了一个 getInstance() 方法来获得 Calendar类的对象。
+	 *   	getInstance() 方法返回一个 Calendar 对象
+	 * 2.Calendar 对象可以调用的方法：
+	 * 		set(..):将日历翻到任何一个时间，当参数 year 取负数时表示公元前
+	 * 		get(...):获取有关年、月、日等时间信息，参数 field 的有效值由 Calendar 静态常量指定。
+	 * 3.Calendar 类中定义的常量
+	 */
+	
+	@Test
+	public void CalendarTest(){
+		//对象调用 get() 方法可以获取有关年、月、日等时间信息
+		Date d = new Date();
+		System.out.println(d);
+		
+		//采用单例模式获取日历对象
+		Calendar c = Calendar.getInstance();
+		//Date getTime() 通过日历对象得到日期对象
+		Date date = c.getTime();
+		System.out.println(date);
+
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		
+		String dStr = sdf.format(d);
+		String cStr = sdf.format(date);
+		
+		System.out.println(dStr==cStr);//false
+		System.out.println(dStr.equals(cStr));//true
+		
+		
+		System.out.println("使用get方法+静态常量 获取日期/时间参数");
+		System.out.println("现在时刻："+sdf.format(c.getTime()));
+		
+		int year = c.get(Calendar.YEAR);
+		System.out.println("现在是"+year+"年");
+		
+		int month = c.get(Calendar.MONTH);
+		System.out.println("现在是"+month+"月");
+		
+		int day = c.get(Calendar.DATE);
+		int days = c.get(Calendar.DAY_OF_MONTH);
+		System.out.println("日期："+day);
+		System.out.println("日期："+days);
+		
+		int week = c.get(Calendar.DAY_OF_WEEK);
+		System.out.println("星期"+week);
+		
+		int hour = c.get(Calendar.HOUR);
+		int hours = c.get(Calendar.HOUR_OF_DAY);
+		System.out.println(hour+"点");
+		System.out.println(hours+"点");
+
+		int minute = c.get(Calendar.MINUTE);
+		int second = c.get(Calendar.SECOND);
+		int millisecond = c.get(Calendar.MILLISECOND);
+		System.out.println(minute+"分");
+		System.out.println(second+"秒");
+		System.out.println(millisecond+"毫秒");
+		
+		System.out.println("---------------");
+		
+//		setTime(Date date) - 使用给定的 Date设置此日历的时间
+//		设置日期 : 1970-01-01 08:00:00
+		Calendar c1 = Calendar.getInstance();
+		Date d2 = new Date(0);//Thu Jan 01 08:00:00 CST 1970
+		System.out.println(d2);
+		c1.setTime(d2); 
+		System.out.println(c1);
+		
+	}
+	
+	/**
+	 * @describe 翻日历
+				add方法，在原日期上增加年/月/日
+				set方法，直接设置年/月/日
+	 * @author ks0pc23-PC 
+	 * @date 2019年9月10日 下午4:27:57
+	 * @return void
+	 * @throws Exception
+	 */
+	@Test
+	public void CalendarTest1(){
+		Calendar c = Calendar.getInstance();
+		Date now = new Date();
+
+		//设置时间格式
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		
+		//当前日期
+		System.out.println("当前日期:"+sdf.format(c.getTime()));
+		
+		//void add(int field, int amount)
+		//根据日历的规则，为给定的日历字段 field 添加或减去指定的时间量 amount
+		
+		//下个月的今天
+		c.setTime(now);
+		c.add(Calendar.MONTH, 1);
+		System.out.println("下个月的今天:"+sdf.format(c.getTime()));
+			
+		//上个月的今天
+		c.setTime(now);
+		c.add(Calendar.MONTH, -1);
+		System.out.println("上个月的今天:"+sdf.format(c.getTime()));
+		
+		//去年的今天
+		c.setTime(now);
+		c.add(Calendar.YEAR, -1);
+		System.out.println("去年年的今天:"+sdf.format(c.getTime()));
+		
+		//明年的今天
+		c.setTime(now);
+		c.add(Calendar.YEAR, 1);
+		System.out.println("明年的今天:"+sdf.format(c.getTime()));
+		
+		//上个月的第三天
+		c.setTime(now);
+		c.add(Calendar.MONTH, -1);
+		c.set(Calendar.DATE, 3);
+		System.out.println("上个月的第三天:"+sdf.format(c.getTime()));
+		
+		//任意设置一个日期
+		c.setTime(now);
+		c.set(2019, 9, 15, 16, 40, 30);
+		System.out.println(sdf.format(c.getTime()));
+	}
+	
+	/**
+	 * @describe 翻日历:修改
+	 * @author ks0pc23-PC 
+	 * @date 2019年9月10日 下午4:27:57
+	 * @return void
+	 * @throws Exception
+	 */
+	//设置时间格式
+	private static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+	
+	private static String formatDate(Date time){
+		return sdf.format(time);
+	} 
+	
+	@Test
+	public void CalendarTest2(){
+		Calendar c = Calendar.getInstance();
+		Date now = new Date();
+		//当前日期
+		System.out.println("当前日期:"+formatDate(c.getTime()));
+		
+		//void add(int field, int amount)
+		//根据日历的规则，为给定的日历字段 field 添加或减去指定的时间量 amount
+		
+		//下个月的今天
+		c.setTime(now);
+		c.add(Calendar.MONTH, 1);
+		System.out.println("下个月的今天:"+formatDate(c.getTime()));
+			
+		//上个月的今天
+		c.setTime(now);
+		c.add(Calendar.MONTH, -1);
+		System.out.println("上个月的今天:"+formatDate(c.getTime()));
+		
+		//去年的今天
+		c.setTime(now);
+		c.add(Calendar.YEAR, -1);
+		System.out.println("去年年的今天:"+formatDate(c.getTime()));
+		
+		//明年的今天
+		c.setTime(now);
+		c.add(Calendar.YEAR, 1);
+		System.out.println("明年的今天:"+formatDate(c.getTime()));
+		
+		//上个月的第三天
+		c.setTime(now);
+		c.add(Calendar.MONTH, -1);
+		c.set(Calendar.DATE, 3);
+		System.out.println("上个月的第三天:"+formatDate(c.getTime()));
+		
+		//任意设置一个日期
+		c.setTime(now);
+		c.set(2019, 9, 15, 16, 40, 30);
+		System.out.println(formatDate(c.getTime()));
+	}
+	
+	
+	//找出下个月的倒数第3天是哪天
+	@Test
+	public void CalendarTest3(){
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		
+		Calendar c = Calendar.getInstance();
+		Date now  = new Date();
+		
+		
+		c.add(Calendar.MONTH, +1);
+		c.set(Calendar.DAY_OF_MONTH, -3);
+		System.out.println(sdf.format(c.getTime()));
+		
+	}
 	
 	
 }
