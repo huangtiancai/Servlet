@@ -22,37 +22,72 @@ public class dateDemo {
 	
 	/**
 	 * function: testDate
-	 * Description:java日期和毫秒值的相互转化
+	 * Description:Date类
 	 * return:void
 	 */
 	@Test
 	public void testDate(){
+		/**
+		 * 构造方法	
+		 */
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		
+		//调用无参数构造函数
+		Date date = new Date();
+		System.out.println(date);
+		
+		//获取时间原点：1970-01-01 08:00:00
+		Date dzero = new Date(0);
+		System.out.println(dzero);//Thu Jan 01 08:00:00 CST 1970
+		System.out.println(sdf.format(dzero));
+		
+		//调用含有一个long类型参数的构造函数	
+		//将指定时间(毫秒值)传给Date构造器，自动转换为日期
+		Date date1 = new Date(60000);//long型数据加L或不加
+		System.out.println(date1);
+		
+		Date date2 = new Date(1567912944032L);
+		System.out.println(date2);
+		
+		System.out.println("--------------------------");
+
 		//获取当前日期对象
 		Date d = new Date();
 		System.out.println("当前日期："+d);
 		
-		//1.日期转毫秒
+		/**
+		 * 常用方法
+		 */
+		//1.日期转毫秒:long getTime()
 		long time = d.getTime();
 		System.out.println("当前日期的毫秒数："+time);
 		
 		//2.毫秒转日期
 		//2.1将指定时间(毫秒值)传给Date构造器，自动转换为日期，后面记得加上L
-		Date d2 = new Date(1567912944032l);
+		Date d2 = new Date(1567912944032L);
 		System.out.println("d2:"+d2);
 		
-		//2.2使用setTime方法
+		//2.2使用setTime方法:void setTime(long time) 
 		Date d3 = new Date();	
-		d3.setTime(1567912944032l);
+		d3.setTime(1567912944032L);
 		System.out.println("d3:"+d3);
 		
 		//d2 和 d3的对比
 		System.out.println(d3==d2);
 		System.out.println(d3.equals(d2));
 		
-		//设置日期 : 1970-01-01 08:00:00
-		Date d4 = new Date(0);
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		System.out.println(sdf.format(d4));
+		//3.将此 Date对象转换为 String的形式 - String toString()
+		Date d4 = new Date();
+		System.out.println(d4.toString());
+		
+		System.out.println(d2.before(d3));//false
+		System.out.println(d2.after(d3));//false
+		System.out.println(d2.equals(d3));//true
+		
+		//如果参数Date等于此Date，则值为0 ; 如果此日期在Date参数之前，该值小于0 ; 如果此参数在Date参数之后，则值大于0 。 
+		System.out.println(d2.compareTo(d3));//0
+		System.out.println(d2.compareTo(d4));//-1
+		System.out.println(d4.compareTo(d2));
 		
 	}
 	
@@ -304,11 +339,11 @@ public class dateDemo {
 	public void testDa9(){
 		// 获取当前日期对象
 		Date d = new Date();
-		System.out.println(d);//Tue Sep 10 00:10:12 CST 2019
+		System.out.println(d);//Wed Sep 11 13:42:44 CST 2019
 		
 		//getDateTimeInstance(int dateStyle, int timeStyle, Locale aLocale)  - 获取给定区域设置的给定格式样式的日期/时间格式化程序。 
 		DateFormat df1 = DateFormat.getDateTimeInstance(DateFormat.LONG,DateFormat.MEDIUM,Locale.CHINA);
-		System.out.println(df1.format(d));//2019年9月10日 0:10:12
+		System.out.println(df1.format(d));//2019年9月11日 13:42:44
 	}
 	
 	/**
@@ -330,8 +365,13 @@ public class dateDemo {
 		System.out.println(df1.format(d));//19-9-10 上午12时21分29秒
 		
 		//2.把字符串反向解析成一个date对象 
-		String s = "19-9-10 上午12时21分29秒";
-		DateFormat df2 = DateFormat.getDateTimeInstance(DateFormat.SHORT,DateFormat.LONG,Locale.CHINA);
+//		String s = "19-9-10 上午12时21分29秒";
+//		DateFormat df2 = DateFormat.getDateTimeInstance(DateFormat.SHORT,DateFormat.LONG,Locale.CHINA);
+//		Date d1 = df2.parse(s);
+//		System.out.println(d1);
+		
+		String s = "2019年9月11日 13:42:44";
+		DateFormat df2 = DateFormat.getDateTimeInstance(DateFormat.LONG,DateFormat.MEDIUM,Locale.CHINA);
 		Date d1 = df2.parse(s);
 		System.out.println(d1);
 	}
@@ -393,8 +433,10 @@ public class dateDemo {
 		Date d = new Date();
 		System.out.println(d);
 		
+		
 		//采用单例模式获取日历对象
 		Calendar c = Calendar.getInstance();
+
 		//Date getTime() 通过日历对象得到日期对象
 		Date date = c.getTime();
 		System.out.println(date);
@@ -466,7 +508,7 @@ public class dateDemo {
 		//设置时间格式
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		
-		//当前日期
+		//当前日期	
 		System.out.println("当前日期:"+sdf.format(c.getTime()));
 		
 		//void add(int field, int amount)
@@ -498,10 +540,27 @@ public class dateDemo {
 		c.set(Calendar.DATE, 3);
 		System.out.println("上个月的第三天:"+sdf.format(c.getTime()));
 		
+//		c.set(field, value);
+//		c.set(year, month, date);
+//		c.set(year, month, date, hourOfDay, minute);
+//		c.set(year, month, date, hourOfDay, minute, second);
+
+		
+		//为指定的日历字段设置给定值
+		c.setTime(now);
+		c.set(Calendar.YEAR, 2022);
+		System.out.println(sdf.format(c.getTime()));
+		
 		//任意设置一个日期
 		c.setTime(now);
 		c.set(2019, 9, 15, 16, 40, 30);
 		System.out.println(sdf.format(c.getTime()));
+		
+
+		
+		
+		
+		
 	}
 	
 	/**
