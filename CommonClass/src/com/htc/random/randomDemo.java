@@ -38,8 +38,9 @@ public class randomDemo {
 		
 		int i1 = random.nextInt();			//生成一个随机的 int 值，该值介于 int 的区间，也就是 -2的31次方~2的31次方-1
 		int i2 = random.nextInt(10);		//生成[0,10)区间的整数
-		int i3 = random.nextInt(10)-3;		//生成[-3,7)区间的整数
-		int i4 = Math.abs(random.nextInt()%10);
+		int i3 = Math.abs(random.nextInt()%10);//生成[0,10)区间的整数
+		int i4 = random.nextInt(10)-3;		//生成[-3,7)区间的整数
+		
 		
 		long l1 = random.nextLong();		//生成一个随机长整型值
 		boolean b1 = random.nextBoolean();	//生成一个随机的 boolean 值，生成 true 和 false 的值概率相等
