@@ -13,6 +13,6 @@ import java.util.Arrays;
 */
 public class ArraysDemo {
 	public void testArray(){
-//		Arrays.asList(a)
+		
 	}
 }
