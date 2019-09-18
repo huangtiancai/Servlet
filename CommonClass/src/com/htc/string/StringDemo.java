@@ -284,11 +284,6 @@ public class StringDemo {
 		
 	}
 	
-	
-	
-	
-	
-	
 	/**
 	 * @describe length属性、length()方法和size()的方法的区别
 	 * 1.length属性是针对Java中的数组来说的，要求数组的长度可以用其length属性；
