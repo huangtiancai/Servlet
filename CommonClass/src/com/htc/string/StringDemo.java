@@ -52,7 +52,7 @@ public class StringDemo {
 	}
 	
 	/**
-	 * @describe 上述通过通过字节数组构造新的字符串对象 => new String(各种形式);
+	 * @describe 上述通过字节数组构造新的字符串对象 => new String(各种形式);
 	 * @param 
 	 */
 	@Test
@@ -260,6 +260,7 @@ public class StringDemo {
 	
 	/**
 	 * @describe String类的常用方法:比较字符串
+	 * equals
 	 * equalsIgnoreCase
 	 * @param
 	 */
