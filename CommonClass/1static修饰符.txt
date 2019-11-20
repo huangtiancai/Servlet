@@ -11,7 +11,6 @@ public static void main(String[] arguments) {
    // 方法体
 }
 
-
 Java语言提供了很多修饰符，主要分为以下两类：
 
 - 访问修饰符：default、private、public、protected
