@@ -1,0 +1,107 @@
+# Java 修饰符
+## 修饰符的作用：
+修饰符用来定义类、方法或者变量，通常放在语句的最前端
+public class ClassName {
+   // ...
+}
+private boolean myFlag;
+static final double weeks = 9.5;
+protected static final int BOXWIDTH = 42;
+public static void main(String[] arguments) {
+   // 方法体
+}
+
+
+Java语言提供了很多修饰符，主要分为以下两类：
+
+- 访问修饰符：default、private、public、protected
+- 非访问修饰符:static、static、abstract、synchronized、volatile等
+
+## 访问控制修饰符
+Java中，可以使用访问控制符来保护对类、变量、方法和构造方法的访问。Java 支持 4 种不同的访问权限。
+default (即默认，什么也不写）: 在同一包内可见，不使用任何修饰符。使用对象：类、接口、变量、方法。
+private : 在同一类内可见。使用对象：变量、方法。 注意：不能修饰类（外部类）
+public : 对所有类可见。使用对象：类、接口、变量、方法
+protected : 对同一包内的类和所有子类可见。使用对象：变量、方法。 注意：不能修饰类（外部类）。
+
+
+## 非访问修饰符
+static 修饰符，用来修饰类方法和类变量。
+final 修饰符，用来修饰类、方法和变量，final 修饰的类不能够被继承，修饰的方法不能被继承类重新定义，修饰的变量为常量，是不可修改的。
+abstract 修饰符，用来创建抽象类和抽象方法。
+synchronized 和 volatile 修饰符，主要用于线程的编程。
+
+### static关键字
+- 静态变量：
+static 关键字用来声明独立于对象的静态变量，无论一个类实例化多少对象，它的静态变量只有一份拷贝。
+ 静态变量也被称为类变量。
+ 局部变量不能被声明为 static 变量。
+
+- 静态方法：
+static 关键字用来声明独立于对象的静态方法。
+静态方法不能使用类的非静态变量。
+静态方法从参数列表得到数据，然后计算这些数据。
+
+对类变量（静态变量）和方法（静态方法）的访问可以直接使用 classname.variablename 和 classname.methodname 的方式访问。
+------------------------------------------------------------------------------------------
+前言：static关键字解析
+Q1:static修饰基本类型域
+Q2:static修饰方法
+Q3:static修饰代码块
+Q4:static类
+
+static关键字解析：
+在java语言中，关键字static表明，特定的成员属于类型本身，而不是那个类型的实例。
+换句话说，不管我们产生多少对象，它们只共享一个静态成员。
+而且在没有对象创建时，这个静态成员就存在了，所以说静态成员属于类型本身。比如我们熟悉的Math.PI，Math.pow()方法。
+
+下面展现了static Variables的存储形式
+静态变量是存储在metaspace中的，而创建的对象是放在堆空间中的（具体的内存管理机制，等到后续的文章再研究）
+Metaspace(java 8 onwards...):
+Static Variables 
+static int count = 2;
+
+Heap Memory:
+Objet1
+String name = 'Jon';
+Int id = 22;
+
+Objet2
+String name = 'Mike';
+Int id = 210;
+
+对象Object1和Object2共享静态变量count
+
+Q1:static修饰基本类型域
+静态变量
+静态常量
+如果一个域被声明为static，这个域会被所有属于这个类的实例所共享，当然这个域是可以修改值的。
+除非是被声明为static final，此时静态变量变为静态常量。依然为所有对象共享，但是在第一次初始化后，不再允许修改，比如Math.PI。
+从存储角度来讲，静态变量是存放在JVM memory一个特定的pool中，JVM称之为Metaspace。（在Java8之前，这个pool被称为 Permanent Generation ，翻译为永生代，现在被移除，用Metaspace代替）。
+举个例子:
+建立一个car类，我们需要每次新建一个car对象时，总的车数辆就增加1 => TestDemo
+
+使用static field的场景：
+
+当变量独立于对象的时候
+当变量被所有对象所共享时
+牢记关键点：
+因为static变量属于类，因此我们可以直接使用类名访问static变量，不需要对象引用。
+static变量只能在类级别（class level）使用，在方法内声明static变量和在主函数中都是不被允许的。
+尽管我们可以用对象实例去访问static域，但是我们不应该这样做，因为会使得我们无法分辨这个域是属于实例的还是类的。
+
+
+
+
+
+
+
+
+
+
+
+
+
+参考：
+https://www.runoob.com/java/java-modifier-types.html
+https://www.cnblogs.com/zuotongbin/p/11087029.html
