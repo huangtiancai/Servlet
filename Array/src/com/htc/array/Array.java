@@ -75,14 +75,30 @@ public class Array {
 		System.out.println("数组中最小的值为："+min);	
 	}
 	
-	// 初始化数组
+	// 初始化数组 - 分配空间与赋值分步进行
 	@Test
 	public void initialArray(){
-		//分配空间与赋值分步进行
 		int[] a = new int[3];
 		System.out.println(a[0]); // 0 - 没有赋值，使用默认值,int类型的数组默认值是0
 		
 		// 进行赋值
-	
+		a[0] = 100;
+		a[1] = 200;
+		a[2] = 300;
+		
+		System.out.println(a[1]); // 200
+		
 	}
+	
+	// 初始化数组 - 分配空间，同时赋值
+	@Test
+	public void initialArray1(){
+		// 写法一：分配空间同时赋值
+		int[] a = new int[]{100,200,300,400};
+		// 省略new int[]
+		int[] b = {100,200,300,400};
+		// 指定课数组长度就不能同时设置数组的长度 
+//		int[] c = new int[4]{100,200,300,400};
+	}
+	
 }
