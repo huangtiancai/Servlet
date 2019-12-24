@@ -34,8 +34,9 @@ public class ArrayAlgorithm {
 	public void traversal(){
 		int[] a = {18,62,68,82,65,9};
 		
-//		for(){}
-		
-		
+		for(int i=0;i<a.length;i++){
+			System.out.print(a[i]+" ");
+		}	
 	}
+	// 
 }

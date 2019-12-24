@@ -48,17 +48,22 @@ public class ArrayString {
 		}
 	}
 	
+	
+	// 数组=>字符串
+	
 	// 4.使用 StringUtils 中的 join 函数，使用前需先引入 common-lang3 的 jar 包(apache官网)
 	// 下面可以总结下common-lang3工具类的使用方法
 	@Test
 	public void StringUtils(){
 		String[] str = {"1","2","a","c"};
-		StringUtils.join(str);
-//		StringUtils.join(str,",");
-		// 遍历
-		for(int i=0;i<str.length;i++){
-			System.out.print(str[i]+" "); // 1 2 a c 
-		}
+		String[] str2 = {"1","2","a","c"};
+		
+		String join = StringUtils.join(str);
+		String join2 =StringUtils.join(str2,",");
+		
+		System.out.println(join);//12ac
+		System.out.println(join2);//1,2,a,c
+		
 	}	
 	
 }
